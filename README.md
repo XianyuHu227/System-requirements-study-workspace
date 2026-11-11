@@ -8,7 +8,6 @@ A personal study web app that turns a semester of system requirements concepts i
 
 > **Status:** working student prototype. Built for actual exam revision and improved through use. The personal hosted instance requires its owner's ChatGPT sign-in for paid AI features; opening the public page does not grant access to API credits.
 
-![Study dashboard](docs/images/dashboard.png)
 
 ## Why this project?
 
