@@ -4,7 +4,7 @@ const source=await fs.readFile('dist/server/index.js','utf8');
 const mod=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 assert.equal(typeof mod.default.fetch,'function');assert(!/sk-[a-z0-9]{24,}/i.test(source),'No API key in source bundle');
 const env={AI_OWNER_EMAIL:'owner@test.invalid',DEEPSEEK_API_KEY:'test-secret'},origin='https://study.test';let calls=[];
-const feedback={summary:{zh:'基本正确',en:'Mostly correct'},criteria:['解释弱点及影响','角色与利益对应','区分 Analysis 与 Design'].map(criterion=>({criterion,status:'met',feedback:{zh:'已覆盖',en:'Covered'}})),strengths:[{zh:'清晰',en:'Clear'}],improvements:[],revised_answer:{zh:'参考',en:'Example'},next_step:{zh:'继续练习',en:'Keep practising'},confidence:'medium'};
+const feedback={summary:{zh:'基本正确',en:'Mostly correct'},criteria:['解释弱点及影响','角色与利益对应','区分系统与项目相关者'].map(criterion=>({criterion,status:'met',feedback:{zh:'已覆盖',en:'Covered'}})),strengths:[{zh:'清晰',en:'Clear'}],improvements:[],revised_answer:{zh:'参考',en:'Example'},next_step:{zh:'继续练习',en:'Keep practising'},confidence:'medium'};
 const mock=async(url,opts)=>{calls.push({url,opts});if(url.endsWith('/models'))return Response.json({data:[{id:'deepseek-flash',name:'Flash',max_output_tokens:32768,effort:{supported_levels:['low','high','max'],default_level:'high'}},{id:'deepseek-chat'}]});return Response.json({choices:[{finish_reason:'stop',message:{content:JSON.stringify(feedback)}}]})};
 const handler=mod.createHandler(mock,()=>1000000);
 const post=(body,headers={})=>new Request(origin+'/api/grade',{method:'POST',headers:{'oai-authenticated-user-email':'owner@test.invalid','Content-Type':'application/json',Origin:origin,...headers},body:typeof body==='string'?body:JSON.stringify(body)});

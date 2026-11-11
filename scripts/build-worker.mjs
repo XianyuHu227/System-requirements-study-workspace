@@ -2,8 +2,9 @@
 import fs from 'node:fs/promises';import path from 'node:path';import vm from 'node:vm';
 const base=path.resolve('.'),web=path.join(base,'public'),out=path.join(base,'dist');
 const data=await fs.readFile(path.join(web,'data.js'),'utf8');const context=vm.createContext({});vm.runInContext(data,context);
+for(const file of ['i18n.js','practice-bank.js'])vm.runInContext(await fs.readFile(path.join(web,file),'utf8'),context);
 const {lessons,cases}=vm.runInContext('({lessons:LESSONS,cases:CASES})',context);
-const catalog={};for(const l of lessons)catalog['lesson'+l.id]={title:l.title,question:l.task,reference:l.answer,checks:l.checks,lessonIds:[l.id],context:l.sections};
+const catalog={};for(const l of lessons)for(const q of l.questions)catalog[q.id]={title:l.title+' · '+q.title,question:q.task,reference:q.answer,checks:q.checks,lessonIds:[l.id],sourceIds:q.sources,context:l.sections};
 for(const c of cases)for(const [i,t]of c.tasks.entries())catalog['case'+c.id+'task'+i]={title:t.title,scenario:c.scenario,question:t.prompt,reference:t.answer,checks:t.checks,lessonIds:c.topics,context:c.topics.map(i=>lessons[i-1].sections),drawing:t.draw?'Text notes only. The actual drawing is not provided.':undefined};
 const samples=[
 ['SMART absolute availability','Assess an unqualified 100% availability target using SMART.','Discuss attainability and distinguish a numeric target from a feasible guarantee.',['Identify the relevant SMART limitation','Explain why a numerical target does not prove attainability']],

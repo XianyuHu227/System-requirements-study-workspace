@@ -4,7 +4,7 @@ A personal study web app that turns a semester of system requirements concepts i
 
 **HTML · CSS · JavaScript · Node.js · Cloudflare Workers · SQLite / D1**
 
-[Live website](https://system-requirements-study-xianyu.lucky-aphid-5599.chatgpt.site/) · [中文说明](README.zh-CN.md) · [Architecture](docs/ARCHITECTURE.md) · [Development notes](docs/DEVELOPMENT.md)
+[Live website](https://system-requirements-study-xianyu.lucky-aphid-5599.chatgpt.site/) · [中文说明](README.zh-CN.md) · [Architecture](docs/ARCHITECTURE.md) · [Development notes](docs/DEVELOPMENT.md) · [Practice coverage](docs/PRACTICE.md)
 
 > **Status:** working student prototype. Built for actual exam revision and improved through use. The personal hosted instance requires its owner's ChatGPT sign-in for paid AI features; opening the public page does not grant access to API credits.
 
@@ -19,7 +19,7 @@ It also became a practical requirements-engineering exercise: identify a real ne
 
 | Area | What it does |
 | --- | --- |
-| Guided revision | Ten course topics organised into concept, example, application and independent-answer steps. |
+| Guided revision | Ten course topics with five bilingual written questions each (50 total), organised into concept, example, application and independent-answer steps. |
 | Bilingual learning | Chinese/English study units with bilingual, Chinese-only and English-only display modes. |
 | Practice | Thirty original multiple-choice questions, three scenario practice groups, notes and handwritten-sheet planning. |
 | Drawing | A locally saved activity-diagram board with pen, eraser, undo and clear. AI grading receives text notes, not drawing pixels. |

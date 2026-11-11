@@ -9,8 +9,8 @@ const clone=v=>JSON.parse(JSON.stringify(v));
 const canonical=v=>JSON.stringify(v,(_,x)=>plain(x)?Object.fromEntries(Object.keys(x).sort().map(k=>[k,x[k]])):x);
 const equal=(a,b)=>canonical(a)===canonical(b);
 const defaults=()=>({date:'2026-11-17',last:1,draw:[],aiChat:[],...Object.fromEntries(MAPS.map(k=>[k,{}]))});
-const task=/^(lesson(?:[1-9]|10)|case[567]task[0-2]|sample[0-5])$/;
-const draft=/^(lesson(?:[1-9]|10)|note(?:[1-9]|10)|case[567]task[0-2]|sample[0-5]|sheet[0-3])$/;
+const task=/^(lesson(?:[1-9]|10)(?:q[2-5])?|case[567]task[0-2]|sample[0-5])$/;
+const draft=/^(lesson(?:[1-9]|10)(?:q[2-5])?|note(?:[1-9]|10)|case[567]task[0-2]|sample[0-5]|sheet[0-3])$/;
 function check(ok){if(!ok)throw Error('Invalid study record')}
 function validJSON(v,depth=0,count={n:0}){check(depth<24&&++count.n<400000);if(v===null||typeof v==='boolean')return;if(typeof v==='string'){check(v.length<=200000);return}if(typeof v==='number'){check(Number.isFinite(v));return}check(Array.isArray(v)||plain(v));for(const [k,x] of Object.entries(v)){check(!['__proto__','prototype','constructor'].includes(k));validJSON(x,depth+1,count)}}
 function normalize(input){
@@ -21,7 +21,7 @@ check(Number.isInteger(s.last)&&s.last>=1&&s.last<=10);
 for(const k of MAPS)check(plain(s[k])&&Object.keys(s[k]).length<600);
 for(const k of ['ratings','steps'])for(const [id,v]of Object.entries(s[k]))check(/^(?:[1-9]|10)$/.test(id)&&Number.isInteger(v)&&v>=0&&v<=(k==='ratings'?2:3));
 for(const [id,v]of Object.entries(s.drafts))check(draft.test(id)&&typeof v==='string'&&v.length<=100000);
-for(const [id,v]of Object.entries(s.checks))check(/^(lesson(?:[1-9]|10)|case[567]task[0-2])-\d{1,2}$/.test(id)&&typeof v==='boolean');
+for(const [id,v]of Object.entries(s.checks))check(/^(lesson(?:[1-9]|10)(?:q[2-5])?|case[567]task[0-2])-\d{1,2}$/.test(id)&&typeof v==='boolean');
 for(const [id,v]of Object.entries(s.days))check(/^[0-6]$/.test(id)&&typeof v==='boolean');
 for(const [id,v]of Object.entries(s.quiz))check(/^(?:[1-9]|[12]\d|30)$/.test(id)&&plain(v)&&Number.isInteger(v.choice)&&v.choice>=0&&v.choice<4&&(v.date===undefined||typeof v.date==='string'));
 check(Array.isArray(s.draw)&&s.draw.length<=5000);let points=0;

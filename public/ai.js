@@ -23,7 +23,7 @@ return {model,effort,refresh,lock(value){model.disabled=value;effort.disabled=va
 function bindAI(){
 aiInitChat();
 document.querySelectorAll('textarea[data-draft]').forEach(area=>{
-const key=area.dataset.draft;if(!/^(lesson\d+|case\d+task\d+|sample\d+)$/.test(key)||area.parentElement.querySelector('[data-ai-for="'+key+'"]'))return;
+const key=area.dataset.draft;if(!/^(lesson\d+(?:q[2-5])?|case\d+task\d+|sample\d+)$/.test(key)||area.parentElement.querySelector('[data-ai-for="'+key+'"]'))return;
 const box=document.createElement('section');box.className='ai-panel';box.dataset.aiFor=key;
 box.innerHTML='<div class="row wrap"><h3>'+both('AI 答案检查 · DeepSeek / Kimi','AI answer check · DeepSeek / Kimi')+'</h3><span class="tag suggested">AI · '+both('复习辅助','Practice aid')+'</span></div><p class="caption">'+both('点击后发送本题、当前文本答案和课程检查项到所选 AI 服务；消耗对应 API 余额，不发送整份学习记录。','Clicking sends this task, current text answer and course criteria to the selected AI provider, using its API balance. Your full study record is not sent.')+'</p><div class="ai-controls">'+aiSettingsMarkup()+'<button class="btn secondary ai-refresh" type="button">刷新模型 / Refresh</button><button class="btn ai-submit" type="button" disabled>AI 检查答案 / Check answer</button></div><div class="ai-message" role="status" aria-live="polite"></div><div class="ai-output"></div>';
 area.nextElementSibling?.classList.contains('save-hint')?area.nextElementSibling.after(box):area.after(box);

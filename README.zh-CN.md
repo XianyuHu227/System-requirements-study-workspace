@@ -2,13 +2,13 @@
 
 一个为了自己的期末复习而开发的网站：分步理解知识、独立作答、查看有来源的 AI 反馈，并在不同设备继续学习。
 
-[English README](README.md) · [在线版](https://system-requirements-study-xianyu.lucky-aphid-5599.chatgpt.site/) · [架构说明](docs/ARCHITECTURE.md)
+[English README](README.md) · [在线版](https://system-requirements-study-xianyu.lucky-aphid-5599.chatgpt.site/) · [架构说明](docs/ARCHITECTURE.md) · [五十题覆盖与依据](docs/PRACTICE.md)
 
 ![复习首页](docs/images/dashboard.png)
 
 ## 目前支持
 
-- 十个主题的分步学习；中英双语、仅中文、仅英文显示。
+- 十个主题的分步学习，每个主题五道主观练习，共五十题；中英双语、仅中文、仅英文显示。
 - 三十道自编概念题、三组情境练习、错题与笔记、手写速记规划。
 - 活动图画板：画笔、橡皮、撤销和清空。
 - DeepSeek / Kimi 答案检查与全站浮动问答；模型和思考设置按实际支持情况显示。
