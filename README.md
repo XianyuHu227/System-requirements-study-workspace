@@ -29,7 +29,6 @@ It also became a practical requirements-engineering exercise: identify a real ne
 | Progress sync | Local-first saving, per-user cloud records, three-way merging, conflict backups and offline recovery. |
 | Data portability | Optional JSON import/export for additional backups; daily device changes use cloud sync. |
 
-![AI tutor and model settings](docs/images/ai-tutor.png)
 
 ## Run locally
 
