@@ -1,0 +1,15 @@
+{
+  "name": "system-requirements-study-workspace",
+  "version": "0.1.0",
+  "description": "A bilingual system requirements study workspace with evidence-based AI tutoring and cloud progress sync.",
+  "private": true,
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "node scripts/preview.mjs",
+    "build": "node scripts/build-worker.mjs",
+    "test": "node scripts/test-worker.mjs && node scripts/test-kimi.mjs && node scripts/test-sync.mjs && node scripts/verify-bilingual.mjs"
+  },
+  "license": "MIT"
+}

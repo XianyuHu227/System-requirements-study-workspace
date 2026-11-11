@@ -1,0 +1,147 @@
+{
+  "scope": "Curated paraphrases of Canvas pages and teacher announcements read on 2026-11-10; not verbatim full pages, not an official answer key, and not live Canvas sync.",
+  "sources": [
+    {
+      "id": "W1",
+      "title": "Role of Requirements",
+      "url": "https://learn.adelaide.edu.au/courses/30725/modules/items/1043650",
+      "kind": "course_notes_paraphrase",
+      "checked": "2026-11-10",
+      "lesson": 1,
+      "keywords": "需求作用 用户中心 相关者 stakeholder waterfall agile sdlc 开发流程",
+      "content": "User-centred development considers users' needs, preferences and safety, involving users iteratively. SDLC covers planning, analysis, design, implementation and maintenance; a traditional variant separates logical and physical design. Waterfall is sequential; Agile adapts through feedback. Project stakeholders affect delivery, budget or scheduling; system stakeholders use the system or its outputs, or are affected by it."
+    },
+    {
+      "id": "W2",
+      "title": "Gathering Requirements",
+      "url": "https://learn.adelaide.edu.au/courses/30725/modules/items/1043667",
+      "kind": "course_notes_paraphrase",
+      "checked": "2026-11-10",
+      "lesson": 2,
+      "keywords": "需求获取 访谈 开放 封闭 引导 问卷 interview elicitation observation problem statement",
+      "content": "A problem statement identifies the issue, who is affected, its impact and why it matters. Elicitation methods include interviews, questionnaires, observation and document analysis. Open questions allow detailed experiences and unexpected needs; closed questions constrain responses. Avoid leading questions. JAD brings users, analysts and a facilitator together. NGT structures idea generation and ranking. Define project scope and boundaries."
+    },
+    {
+      "id": "W3",
+      "title": "User Profiling",
+      "url": "https://learn.adelaide.edu.au/courses/30725/modules/items/1043684",
+      "kind": "course_notes_paraphrase",
+      "checked": "2026-11-10",
+      "lesson": 3,
+      "keywords": "画像 角色 动机 痛点 persona profile psychographics",
+      "content": "Personas are fictional representatives grounded in user research: goals, behaviours, pain points, motivations and relevant demographic detail. A role is a category of relationship; a persona represents a specific pattern of users. Psychographics include interests, attitudes, opinions, values and lifestyle. Consider varied abilities, language and skills; respect consent, privacy and neutral research. Do not present invented scenario details as observed facts."
+    },
+    {
+      "id": "W4",
+      "title": "Categorize Requirements",
+      "url": "https://learn.adelaide.edu.au/courses/30725/modules/items/1043711",
+      "kind": "course_notes_paraphrase",
+      "checked": "2026-11-10",
+      "lesson": 4,
+      "keywords": "用户故事 user story invest acceptance criteria cos 验收 条件",
+      "content": "The course user-story format is: As a [role], I want [goal/desire] so that [reason/benefit]. A story supports conversation rather than detailed design. INVEST describes story quality: Independent, Negotiable, Valuable, Estimable, Small, Testable. Conditions of satisfaction and acceptance criteria need clear, verifiable pass/fail conditions. Personas and stories can have many-to-many relationships."
+    },
+    {
+      "id": "W5",
+      "title": "Write Requirements",
+      "url": "https://learn.adelaide.edu.au/courses/30725/modules/items/1043729",
+      "kind": "course_notes_paraphrase",
+      "checked": "2026-11-10",
+      "lesson": 5,
+      "keywords": "需求 编写 smart shall must furps 功能 非功能 可追溯 measurable",
+      "content": "Course-specific writing convention: use shall for functional requirements (functions the system provides), and must for nonfunctional qualities or constraints. Course SMART means Specific (clear, consistent, atomic), Measurable, Attainable (physically possible), Realisable (time, budget, environment and resources), Traceable (conception through specification, design, implementation and testing). T is Traceable, not Time-bound. FURPS+ covers Functionality, Usability, Reliability, Performance, Supportability, plus design constraints. Distinguish functional features from quality attributes; justify classification by the actual requirement. A numeric target alone does not establish feasibility. Proposed metrics added when rewriting a vague requirement are assumptions to validate, not facts in the original question."
+    },
+    {
+      "id": "W6",
+      "title": "Prioritise Requirements",
+      "url": "https://learn.adelaide.edu.au/courses/30725/modules/items/1043751",
+      "kind": "course_notes_paraphrase",
+      "checked": "2026-11-10",
+      "lesson": 6,
+      "keywords": "优先级 moscow prioritisation priority cost risk value",
+      "content": "MoSCoW distinguishes Must, Should, Could and Won't in the current release. Other prioritisation techniques include in/out, pairwise comparisons and distributing 100 points. Assess value, cost, risk, dependencies, scope and stakeholder feedback. A course priority formula is value percentage divided by (cost percentage plus risk percentage)."
+    },
+    {
+      "id": "W7",
+      "title": "Use Case Development",
+      "url": "https://learn.adelaide.edu.au/courses/30725/modules/items/1043771",
+      "kind": "course_notes_paraphrase",
+      "checked": "2026-11-10",
+      "lesson": 7,
+      "keywords": "用例 use case actor main success scenario extensions precondition trigger 蓝色 保证",
+      "content": "Use cases describe external actor–system interactions toward a goal, primarily functional behaviour. Use-case fields include primary actor, stakeholders/interests, preconditions, minimal guarantee, success guarantee, trigger, numbered main success scenario and extensions. Name a use case with a present-tense verb phrase. Blue/sea level is a user goal; cloud/kite levels are broader and fish level is detailed. Preconditions are already true when the use case begins. An extension should identify its condition and associated step. There is a course-source tension: the concept quality checklist discourages security/system-failure content, while Tutorial 07 includes system failures among extensions. Explain this difference and follow the specific question; do not invent an exam rule resolving it."
+    },
+    {
+      "id": "W8",
+      "title": "Use Case Illustration",
+      "url": "https://learn.adelaide.edu.au/courses/30725/modules/items/1043788",
+      "kind": "course_notes_paraphrase",
+      "checked": "2026-11-10",
+      "lesson": 8,
+      "keywords": "活动图 activity diagram swimlane domain uml decision fork join 领域模型",
+      "content": "Models deliberately select relevant details; they can be textual, graphical or mathematical. UML examples include use-case, activity and domain models. Activity notation includes initial node, action, flow, decision/merge, fork/join and final node. Swimlanes assign responsibility. Domain models represent real-world concepts, attributes and relationships, rather than software implementation classes. Distinguish decision/merge alternatives from fork/join concurrency."
+    },
+    {
+      "id": "W9",
+      "title": "Validation and Verification",
+      "url": "https://learn.adelaide.edu.au/courses/30725/modules/items/1043805",
+      "kind": "course_notes_paraphrase",
+      "checked": "2026-11-10",
+      "lesson": 9,
+      "keywords": "确认 验证 validation verification prototype 原型 保真度",
+      "content": "Validation asks whether we are building the right system: requirements fit user needs and business reality. Verification asks whether we are building the system right: requirements and artefacts are well structured, consistent, feasible and testable. Walkthroughs, prototyping and role play can help validation; inspections and checking testability, conflicts and feasibility help verification. Low/mid/high fidelity prototypes differ in realism and interaction detail; fidelity does not imply production completeness."
+    },
+    {
+      "id": "W10",
+      "title": "Changing Requirements",
+      "url": "https://learn.adelaide.edu.au/courses/30725/modules/items/1043833",
+      "kind": "course_notes_paraphrase",
+      "checked": "2026-11-10",
+      "lesson": 10,
+      "keywords": "变更 基线 baseline traceability forward backward rtm 追溯",
+      "content": "A baseline is an approved requirements reference point. Manage changes by recording requests, analysing impact on cost, schedule and dependencies, obtaining a decision, updating versions and communicating changes. Requirements-management pillars include change control, status, versioning and traceability. Forward traceability follows requirements to design, implementation and tests; backward traceability links artefacts back to requirements; bidirectional uses both."
+    },
+    {
+      "id": "T08",
+      "title": "Tutorial 08 — activity diagram instruction",
+      "url": "https://learn.adelaide.edu.au/courses/30725/modules/items/1043793",
+      "kind": "tutorial_instruction",
+      "checked": "2026-11-10",
+      "lesson": 8,
+      "content": "Tutorial 08 explicitly instructs students to omit extensions from the activity diagram and use only the main activities between actor and system from the use case's main success scenario. This instruction is verified for Tutorial 08; it is NOT a confirmed universal rule for the exam. Show actor/system responsibility and start/end nodes."
+    },
+    {
+      "id": "EXAM",
+      "title": "Exam structure — 2 and 6 November announcements",
+      "url": "https://learn.adelaide.edu.au/courses/30725/discussion_topics/240437",
+      "kind": "teacher_announcement_paraphrase",
+      "checked": "2026-11-10",
+      "content": "The announced exam has 120 marks. Q5 persona/story/open and closed interview questions:24; Q6 use-case description and activity diagram:20; Q7 persona/requirements/stakeholders/elicitation:31. The other 45 marks include systems requirements, SDLC, elicitation and rewriting vague requirements. This is the announced structure, not an answer key. Exam questions and later announcements take precedence."
+    },
+    {
+      "id": "RULES",
+      "title": "Information about exam",
+      "url": "https://learn.adelaide.edu.au/courses/30725/discussion_topics/230238",
+      "kind": "teacher_announcement_paraphrase",
+      "checked": "2026-11-10",
+      "content": "Exam is 40% of the course grade and has a 40% exam hurdle. Two double-sided handwritten A4 sheets are permitted; an access-plan exemption may alter the handwritten rule. Check MyAdelaide for the actual date, time and venue. The checked announcement does not provide a confirmed date, start time or venue."
+    },
+    {
+      "id": "SAMPLE",
+      "title": "Official Part 1 sample questions (questions only)",
+      "url": "https://learn.adelaide.edu.au/courses/30725/files/7113590?wrap=1",
+      "kind": "official_questions_paraphrase",
+      "checked": "2026-11-10",
+      "content": "Official samples ask about 100% availability and SMART, easy-to-use and SMART, 99.9% availability and multilingual support using FURPS+, Waterfall weaknesses, requirements/analysis/specification, leading and open interview questions, and rewriting fast and user-friendly into measurable requirements. No complete official worked answer key was supplied in the materials checked."
+    },
+    {
+      "id": "TRACE",
+      "title": "Different Types of Traceability",
+      "url": "https://learn.adelaide.edu.au/courses/30725/discussion_topics/232146",
+      "kind": "teacher_answer_paraphrase",
+      "checked": "2026-11-10",
+      "lesson": 10,
+      "content": "The teacher clarifies that traceability depends on context: it can refer to entity history or dependency relationships. Calling an artefact a table, matrix or mapping does not settle the intended meaning; explain what is being traced."
+    }
+  ]
+}

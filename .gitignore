@@ -1,0 +1,21 @@
+# Runtime secrets and device data
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+*.pem
+*.key
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*-progress.json
+# Generated output and local tooling
+dist/
+node_modules/
+.wrangler/
+.openai/preview-progress.sqlite*
+.openai/local-git-safe.conf
+.DS_Store
+Thumbs.db
