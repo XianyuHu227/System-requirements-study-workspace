@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "node scripts/preview.mjs",
     "build": "node scripts/build-worker.mjs",
-    "test": "node scripts/test-worker.mjs && node scripts/test-kimi.mjs && node scripts/test-sync.mjs && node scripts/verify-bilingual.mjs"
+    "test": "node scripts/test-worker.mjs && node scripts/test-kimi.mjs && node scripts/test-sync.mjs && node scripts/verify-bilingual.mjs && node scripts/test-grading.mjs"
   },
   "license": "MIT"
 }

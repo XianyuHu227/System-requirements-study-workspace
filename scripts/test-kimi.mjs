@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';import assert from 'node:assert/strict';
 const source=await fs.readFile('dist/server/index.js','utf8'),{createHandler}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const answer={basis:'course_notes',answer:{zh:'T 是可追溯。[W5]',en:'T means Traceable. [W5]'},source_ids:['W5'],follow_up:{zh:'练习一个例子。',en:'Try an example.'}};
-const feedback={summary:{zh:'清楚',en:'Clear'},criteria:Array.from({length:3},()=>({status:'met',feedback:{zh:'满足',en:'Met'}})),strengths:[],improvements:[],revised_answer:{zh:'示例',en:'Example'},next_step:{zh:'继续',en:'Continue'},confidence:'medium'};
+const feedback={summary:{zh:'清楚',en:'Clear'},criteria:Array.from({length:3},(_,i)=>({criterion_id:'c'+(i+1),status:'met',feedback:{zh:'满足',en:'Met'}})),strengths:[],improvements:[],revised_answer:{zh:'示例',en:'Example'},next_step:{zh:'继续',en:'Continue'},confidence:'medium'};
 let calls=[],down=false;
 const handler=createHandler(async(url,opts)=>{calls.push({url,opts});if(url.includes('deepseek')&&down)return new Response('private upstream detail',{status:401});if(url.endsWith('/models'))return Response.json({data:url.includes('moonshot')?[{id:'kimi-k3.1-pro'},{id:'kimi-k3'},{id:'kimi-k2.6'},{id:'kimi-k2.7-code'},{id:'kimi-k99'},{id:'attacker'}]:[{id:'deepseek-flash'}]});return Response.json({choices:[{finish_reason:'stop',message:{content:JSON.stringify(JSON.parse(opts.body).messages[1].content.includes('student_answer')?feedback:answer)}}]})});
 const env={AI_OWNER_EMAIL:'owner@test.invalid',KIMI_API_KEY:'kimi-test-secret',DEEPSEEK_API_KEY:'deepseek-test-secret'},base='https://study.test';

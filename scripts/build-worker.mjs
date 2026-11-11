@@ -19,7 +19,8 @@ await fs.mkdir(path.join(out,'server'),{recursive:true});await fs.mkdir(path.joi
 const core=await fs.readFile(path.join(web,'sync-core.js'),'utf8');
 const progress=await fs.readFile(path.join(base,'worker/progress.js'),'utf8');
 const kimi=await fs.readFile(path.join(base,'worker/kimi.js'),'utf8');
+const grading=await fs.readFile(path.join(base,'worker/grading.js'),'utf8');
 const runtime=await fs.readFile(path.join(base,'worker/index.js'),'utf8');const manifest=await fs.readFile(path.join(base,'.openai/hosting.json'),'utf8');if(JSON.parse(manifest).static)throw Error('Worker manifest must omit static');
-await fs.writeFile(path.join(out,'server/index.js'),'const ASSETS='+JSON.stringify(assets)+';\nconst CATALOG='+JSON.stringify(catalog)+';\nconst OFFICIAL='+JSON.stringify(official)+';\n'+core+'\n'+progress+'\n'+kimi+'\n'+runtime);
+await fs.writeFile(path.join(out,'server/index.js'),'const ASSETS='+JSON.stringify(assets)+';\nconst CATALOG='+JSON.stringify(catalog)+';\nconst OFFICIAL='+JSON.stringify(official)+';\n'+core+'\n'+progress+'\n'+kimi+'\n'+grading+'\n'+runtime);
 await fs.writeFile(path.join(out,'.openai/hosting.json'),manifest);
 console.log(JSON.stringify({built:true,assets:Object.keys(assets).length,gradableTasks:Object.keys(catalog).length}));
