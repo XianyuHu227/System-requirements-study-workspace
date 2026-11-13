@@ -22,10 +22,10 @@ It also became a practical requirements-engineering exercise: identify a real ne
 | Guided revision | Ten course topics with five bilingual written questions each (50 total), organised into concept, example, application and independent-answer steps. |
 | Bilingual learning | Chinese/English study units with bilingual, Chinese-only and English-only display modes. |
 | Practice | Thirty original multiple-choice questions, three scenario practice groups, notes and handwritten-sheet planning. |
-| Drawing | A locally saved activity-diagram board with pen, eraser, undo and clear. AI grading receives text notes, not drawing pixels. |
+| Drawing | A locally saved activity-diagram board with pen, eraser, undo and clear, plus a one-click "send to AI" action that hands the board to a vision model for UML analysis. |
 | AI answer checks | Server-owned task context and checklists; bilingual feedback without inventing an official exam mark. |
-| Floating tutor | Follow-up questions from any page, with links to the curated Canvas evidence. |
-| Provider choice | DeepSeek and Kimi model discovery, with controls limited to the thinking settings each supported model accepts. |
+| Floating tutor | Follow-up questions from any page, with links to the curated Canvas evidence. An optional image (paste, upload or the drawing board) lets a vision model analyse a UML diagram. |
+| Provider choice | DeepSeek and Kimi model discovery, with controls limited to the thinking settings each supported model accepts. Vision-capable models are tagged so they can also read images. |
 | Progress sync | Local-first saving, per-user cloud records, three-way merging, conflict backups and offline recovery. |
 | Data portability | Optional JSON import/export for additional backups; daily device changes use cloud sync. |
 
@@ -85,6 +85,15 @@ The corpus consists of **paraphrases checked on 10 November 2026**, not full ori
 
 Course links may require university access. No original lecture slide decks, downloaded exam PDFs, private discussion exports, personal learning records or cloud database files are distributed in this repository.
 
+## Image (diagram) analysis
+
+The floating tutor and the Q6 drawing board can send an image to a vision-capable model to analyse a hand-drawn UML activity or use-case diagram — swimlane assignment, initial and final nodes, action order and arrow direction.
+
+- Supported images: PNG, JPEG, WebP and GIF (the drawing board exports PNG). Pasted and uploaded images are resized and compressed in the browser before upload.
+- Only vision-capable models accept images: DeepSeek `deepseek-flash` (vision) and the Kimi vision models (`kimi-k3`, `kimi-k2.6`, `moonshot-v1-*-vision-preview`). The model list tags these so you can pick one.
+- Images travel only with the current question and are never stored in the synced study record or cloud database.
+- Handwritten labels can be misread; treat the result as a study aid, not a graded check.
+
 ## Sync behaviour
 
 Edits save to the browser immediately and are queued for sync after about one second. Open devices check about every fifteen seconds and on returning to the page. Revision compare-and-swap prevents a stale device from blindly replacing cloud state; field-level merging preserves unrelated edits.
@@ -95,7 +104,7 @@ Conflicting answer/drawing versions are recoverable from the sync panel (up to f
 
 The automated suite checks provider routing and thinking settings, malformed responses, citation validation, input/origin limits, owner-only paid API access, bilingual coverage, quiz correction and multi-device sync scenarios. Sync tests use actual in-memory SQLite, including concurrent writes, offline reloads, deletions, conflict restoration and lost acknowledgements.
 
-The prototype still has limits: AI responses can be wrong or fail schema validation; the evidence needs manual updates; drawings are not visually graded; per-isolate AI rate limits are best-effort rather than a durable account-wide quota; and a full accessibility/cross-browser audit remains future work.
+The prototype still has limits: AI responses can be wrong or fail schema validation; the evidence needs manual updates; vision-based diagram analysis can still misread handwritten labels, so it is a study aid rather than a graded check; per-isolate AI rate limits are best-effort rather than a durable account-wide quota; and a full accessibility/cross-browser audit remains future work.
 
 ## Development and attribution
 

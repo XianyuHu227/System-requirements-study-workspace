@@ -16,7 +16,7 @@ The build embeds public assets, the canonical task catalog and the curated evide
 | --- | --- | --- |
 | `GET /api/models` | Model metadata is public | Discover configured providers and supported model controls. Provider failures are isolated. |
 | `POST /api/grade` | Sites-authenticated owner email | Grade a known task using server-owned context and study checklists. |
-| `POST /api/ask` | Sites-authenticated owner email | Ground a bilingual explanation in the supplied curated evidence. |
+| `POST /api/ask` | Sites-authenticated owner email | Ground a bilingual explanation in the supplied curated evidence, optionally analysing an attached image with a vision-capable model. |
 | `GET /api/progress` | Sites-authenticated user ID | Read only the current user's revision and document. |
 | `PUT /api/progress` | Sites-authenticated user ID | Validate the document and save only if its expected revision matches. |
 
@@ -24,7 +24,7 @@ The build embeds public assets, the canonical task catalog and the curated evide
 
 ## AI path
 
-1. The browser submits a selected model ID, supported effort and current question/answer.
+1. The browser submits a selected model ID, supported effort and current question/answer, plus an optional base64 image for vision-capable models.
 2. The Worker checks origin, size, identity, model discovery results and input schema.
 3. The Worker adds canonical task/evidence context and selects a fixed provider endpoint.
 4. The provider returns structured JSON. Hidden reasoning is not displayed or saved as learning content.
@@ -46,6 +46,7 @@ D1 writes and history updates are batched. The current document is isolated by a
 ## Limits
 
 - Maximum request/document size for sync: approximately 2.5 MB.
+- Image input for vision analysis: PNG/JPEG/WebP/GIF base64 up to ~2.5 MB; only vision-capable models accept it. Images are not persisted in the study record.
 - Drawing limit: 150,000 points.
 - User-visible conflict backups: up to 40.
 - Synced tutor exchanges: latest 20; only the most recent two are sent as conversational context.
